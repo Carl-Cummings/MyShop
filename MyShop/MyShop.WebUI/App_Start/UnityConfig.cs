@@ -48,12 +48,17 @@ namespace MyShop.WebUI
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
 
+            // Repositories
             container.RegisterType<IRepository<Product>, SQLRepository<Product>>();
             container.RegisterType<IRepository<ProductCategory>, SQLRepository<ProductCategory>>();
             container.RegisterType<IRepository<Basket>, SQLRepository<Basket>>();
             container.RegisterType<IRepository<BasketItem>, SQLRepository<BasketItem>>();
-            container.RegisterType<IBasketService, BasketService>();
             container.RegisterType<IRepository<Customer>, SQLRepository<Customer>>();
+            container.RegisterType<IRepository<Order>, SQLRepository<Order>>();
+
+            // Services
+            container.RegisterType<IBasketService, BasketService>();
+            container.RegisterType<IOrderService, OrderService>();
         }
     }
 }
